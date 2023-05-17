@@ -1,0 +1,4 @@
+Switch,SwPort,vlan
+SwitchIDCevo,couplingPort_ConnectTo_IDCevoController,0x44 0x45   0x4c     0x69
+SwitchIDCevo,couplingPort_ConnectTo_Switch_IPN,0x44 0x45   0x4c     0x69
+Switch_IPN,couplingPort_ConnectTo_SwitchIDCevo,0x44 0x45   0x4c     0x69

@@ -1,0 +1,22 @@
+{
+  "ECU_NAMES": {
+    "OLD_NAMES": [
+      "IPB_App1",
+      "IPB_App2"
+    ],
+    "NEW_VALUE": "IPB_App"
+  },
+  "DEFAULT_SELECTED_ECU": [
+    "IPN_MAIN"
+  ],
+  "DEFAULT_SELECTED_VLAN":
+    ["0x44"]
+  ,
+  "DATA_PATH": "C:\\Users\\LENOVO\\Desktop\\Data\\IPB_data.csv",
+  "COUPLING_PREFIX": "couplingPort_ConnectTo_",
+  "INCLUDE_ECU_NAMING_IN_COUPLING": true,
+  "FILE_TYPE": "ARXML",
+  "FILE_PATH": "C:\\Users\\hamdi.jarboui\\PycharmProjects\\FB_vis\\fibex_visualisation\\data\\BusDescription_EESystem25_22KW43_V12_Ethernet4_V12_lokal#2210241131.arxml",
+  "WORKSPACE": "D:"
+
+}

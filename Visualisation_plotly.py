@@ -8,8 +8,9 @@ from dash import dcc
 from dash import html
 from data_preparation.preparing_data import import_all_data, set_logger
 
-from resources import dash_cytoscape as cyto
+import dash_cytoscape as cyto
 from resources import dash_reusable_components as drc
+
 
 # Load extra layouts
 cyto.load_extra_layouts()
@@ -26,12 +27,12 @@ server = app.server
 
 # ###################### DATA PREPROCESSING ######################
 # Load data
-with open(r'C:\Users\LENOVO\Desktop\PFE_PROJECT\resources\sample_network.txt') as f:
+with open(r'C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\sample_network.txt') as f:
     network_data = f.read().split('\n')
 
 print("network_data:", network_data)  # check the contents of network_data
 
-data = import_all_data(csv_data_path=r"C:\Users\LENOVO\Desktop\PFE_PROJECT\resources\IPB_data.csv")
+data = import_all_data(csv_data_path=r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\IPB_data.csv")
 
 edges = network_data
 hardwarelist = list(set(data['ECU'])) + list(set(data['ECU.1']))
@@ -213,7 +214,7 @@ app.layout = html.Div([
                         'spread',
                         'euler'
                     ),
-                    value='grid',
+                    value='cola',
                     clearable=False
                 ),
                 drc.NamedRadioItems(
@@ -321,4 +322,4 @@ def generate_elements(nodeData, elements, expansion_mode):
 if __name__ == '__main__':
     logger = set_logger()
 
-    app.run_server(port=8055, debug=True)
+    app.run_server(port=8051, debug=True)

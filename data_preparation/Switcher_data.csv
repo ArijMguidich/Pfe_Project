@@ -1,4 +1,22 @@
 Switch,SwPort,vlan
-SwitchIDCevo,couplingPort_ConnectTo_IDCevoController,0x44 0x45   0x4c     0x69
+Switch_ICON,couplingPort_ConnectTo_Switch_IPN,0x44 0x45  0x49      0x69 0x90
 SwitchIDCevo,couplingPort_ConnectTo_Switch_IPN,0x44 0x45   0x4c     0x69
+Switch_IPB,couplingPort_ConnectTo_Switch_IPN,0x44 0x45  0x49 0x4c     0x69
+Switch_IPN,couplingPort_ConnectTo_FRRController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_IPN_CVController,0x44 0x45  0x49          0xaa
+Switch_IPN,couplingPort_ConnectTo_IPN_MAINController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_IPN_PERFController,0x44 0x45  0x49     0x56 0x69 0x90   0xaa
+Switch_IPN,couplingPort_ConnectTo_MARSController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_MRRController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_SRR_HLController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_SRR_HRController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_SRR_VLController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_SRR_VRController,0x44 0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_SVPController,0x49      0x69
 Switch_IPN,couplingPort_ConnectTo_SwitchIDCevo,0x44 0x45   0x4c     0x69
+Switch_IPN,couplingPort_ConnectTo_Switch_ICON,0x44 0x45  0x49      0x69 0x90
+Switch_IPN,couplingPort_ConnectTo_Switch_IPB,0x44 0x45  0x49 0x4c     0x69
+Switch_IPN,couplingPort_ConnectTo_Switch_L3_Addon_Safety,0x45  0x49
+Switch_IPN,couplingPort_ConnectTo_Switch_SFS,0x44 0x45  0x49
+Switch_L3_Addon_Safety,couplingPort_ConnectTo_Switch_IPN,0x45  0x49
+Switch_SFS,couplingPort_ConnectTo_Switch_IPN,0x44 0x45  0x49

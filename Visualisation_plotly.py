@@ -29,7 +29,6 @@ app = dash.Dash(__name__, assets_folder=r'C:\Users\LENOVO\PycharmProjects\Pfe_Pr
 
 
 server = app.server
-# data=r"C:\Users\LENOVO\Desktop\Data\IPB_data.csv"
 CONFIG_PATH = r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\config.json"
 data_path = r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\IPB_data.csv"
 ECU_TO_SEARCH = "BCP21_GW"
@@ -60,7 +59,6 @@ data = import_all_data(csv_data_path=r"C:\Users\LENOVO\PycharmProjects\Pfe_Proje
 edges = network_data
 # edges = prepare_all_data(csv_data_path=data_path, ecu_names=ECU_LIST, include_port_switch=[True], config_path=CONFIG_PATH)
 
-# print(edges)
 hardwarelist = list(set(data['ECU'])) + list(set(data['ECU.1']))
 hardwarelist = sorted(hardwarelist)
 nodes = pd.DataFrame()
@@ -510,10 +508,11 @@ app.layout = html.Div([
 
 
 ])
-@app.callback(Output('cytoscape', 'layout'),
-              [Input('layout-list', 'value')])
-def update_cytoscape_layout(layout):
-    return {'name': layout}
+
+# @app.callback(Output('cytoscape', 'layout'),
+#               [Input('layout-list', 'value')])
+# def update_cytoscape_layout(layout):
+#     return {'name': layout}
 
 # @app.callback(Output('cytoscape', 'layout'),
 #               [Input('layout-list', 'n_clicks')])
@@ -584,17 +583,17 @@ def toggle_submenu_1(n_clicks):
     else:
         return {"display": "none"}
 
-@app.callback(
-    Output("submenu-2", "style"),
-    [Input("n-arrow-2", "n_clicks")]
-)
-def toggle_submenu_2(n_clicks):
-    if n_clicks is None:
-        return {"display": "none"}
-    elif n_clicks % 2 == 1:
-        return {"display": "block"}
-    else:
-        return {"display": "none"}
+# @app.callback(
+#     Output("submenu-2", "style"),
+#     [Input("n-arrow-2", "n_clicks")]
+# )
+# def toggle_submenu_2(n_clicks):
+#     if n_clicks is None:
+#         return {"display": "none"}
+#     elif n_clicks % 2 == 1:
+#         return {"display": "block"}
+#     else:
+#         return {"display": "none"}
 
 @app.callback(
     Output("submenu-3", "style"),

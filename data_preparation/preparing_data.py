@@ -311,9 +311,9 @@ def prepare_all_data(csv_data_path: str, ecu_names: list, include_port_switch: l
             vlan.extend(vlans_list)
     data_dict['Source'] = source
     data_dict['Target'] = target
-    data_dict['vlann_label'] = vlan
+    # data_dict['vlann_label'] = vlan
     data = pd.DataFrame(data_dict)
-    with open("../resources/sample_network.txt", 'w') as outfile:
+    with open("sample_network.txt", 'w') as outfile:
         for i in range(len(source)):
             line=f"{source[i]} {target[i]}\n"
             outfile.write(line)
@@ -381,12 +381,39 @@ def get_ecu_list(config_path, data_path) -> list:
 
     return ECU_LIST
 
-if __name__ == '__main__':
-    # ecu_names = ['ICON', 'IDCevo', 'IPB_APP', 'IPF_FAR', 'IPN_MAIN', 'L3_Addon_Safety', 'SFS', 'BAC25_ETH', 'CASP25', 'TestEquipmentExtern', 'TestEquipmentIntern', 'ZIM_H', 'sBAC_Eth_EES25', 'IPF_DAF', 'IPF_HVM']
-    #ecu_names = ['IPN_MAIN']
-    #ECU_LIST=get_ecu_list(config_path=r"C:\Users\LENOVO\Documents\GitHub\dash-cytoscape\demos\data\config.json", data_path=r"C:\Users\LENOVO\Desktop\Data\IPB_data.csv" )
+# def get_vlan_list(config_path: str, data_path,include_port_swicth=None):
+#     """
+#     ------------------------------------------------------------------------------------------------------------------------------------------------------------
+#     |       get all vlans  from topologie_Ethernet data
+#     |       :return: vlan_combination : list of all vlans combination
+#     ------------------------------------------------------------------------------------------------------------------------------------------------------------
+#     """
+#     if include_port_swicth is None:
+#         include_port_swicth = ['include port switch to port switch relation']
+#     ecu_list = get_ecu_list(config_path,data_path=data_path)
+#     data = prepare_all_data(csv_data_path=data_path,
+#                             ecu_names=ecu_list, include_port_switch=include_port_swicth,
+#                             config_path=config_path)
+#     vlan_combinations = list(data['vlann_label'])
+#     vlans_list = []
+#     # extracting all vlans
+#     for vlan_combination in vlan_combinations:
+#         vlan_combination = vlan_combination.lstrip().strip()
+#         vlan_sub_list = vlan_combination.split(" ")
+#         vlans_list.extend(vlan_sub_list)
+#     # removing white strings
+#     while "" in vlans_list:
+#         vlans_list.remove("")
+#     # removing duplicated elements
+#     vlans_list = list(set(vlans_list))
+#     return vlans_list
 
-    logger = set_logger()
-    data = prepare_all_data(csv_data_path=r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\IPB_data.csv", ecu_names=['IPN_MAIN'], include_port_switch=[True], config_path=r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\config.json")
-    print(data)
+# if __name__ == '__main__':
+#     # ecu_names = ['ICON', 'IDCevo', 'IPB_APP', 'IPF_FAR', 'IPN_MAIN', 'L3_Addon_Safety', 'SFS', 'BAC25_ETH', 'CASP25', 'TestEquipmentExtern', 'TestEquipmentIntern', 'ZIM_H', 'sBAC_Eth_EES25', 'IPF_DAF', 'IPF_HVM']
+#     #ecu_names = ['IPN_MAIN']
+#     ECU_LIST=get_ecu_list(config_path=r"C:\Users\LENOVO\Documents\GitHub\dash-cytoscape\demos\data\config.json", data_path=r"C:\Users\LENOVO\Desktop\Data\IPB_data.csv" )
+#
+#     logger = set_logger()
+#     data = prepare_all_data(csv_data_path=r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\IPB_data.csv", ecu_names=['icon'], include_port_switch=[True], config_path=r"C:\Users\LENOVO\PycharmProjects\Pfe_Project\resources\config.json")
+#     print(data)
 
